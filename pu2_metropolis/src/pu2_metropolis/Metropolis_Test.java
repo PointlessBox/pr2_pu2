@@ -12,6 +12,5 @@ public class Metropolis_Test {
 		System.out.println(s1.getSteuerID());
 		
 		s1.kaempfe(sh1);
-		// das ist eine änderung
 	}
 }
