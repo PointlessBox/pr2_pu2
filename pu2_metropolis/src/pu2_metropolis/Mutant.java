@@ -5,6 +5,7 @@ import java.util.*;
 public abstract class Mutant<G extends Mutant> extends Einwohner {
 	private String mutation;
 	private Superkraft[] superkraefte;
+	boolean istBesiegt = false;
 //	TODO
 //	private boolean istBesiegt;
 //	UML-Diagramm angleichen
@@ -30,6 +31,14 @@ public abstract class Mutant<G extends Mutant> extends Einwohner {
 
 	private void setSuperkraefte(Superkraft[] superkraefte) {
 		this.superkraefte = superkraefte;
+	}
+	
+	public boolean getIstBesiegt() {
+		return this.istBesiegt;
+	}
+	
+	protected void setIstBesiegt(boolean ergebnis) {
+		this.istBesiegt = ergebnis;
 	}
 
 	public void kaempfe(G gegner) {

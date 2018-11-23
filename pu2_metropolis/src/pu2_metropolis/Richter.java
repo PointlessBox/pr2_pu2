@@ -5,19 +5,19 @@ public class Richter extends Mensch {
 	
 	public Richter(String name, int einkommen, int alter, boolean istKorrupt) {
 		super(name, einkommen, alter);
-		setKorruption(istKorrupt);
+		setIstKorrupt(istKorrupt);
 	}
 	
-	public boolean getKorruption() {
+	public boolean getIstKorrupt() {
 		return istKorrupt;
 	}
 	
-	private void setKorruption(boolean istKorrupt) {
+	private void setIstKorrupt(boolean istKorrupt) {
 		this.istKorrupt = istKorrupt;
 	}
 	
-	public void verurteilen() {
-//	TODO
-//	Funktionalität implementieren
+	public void verurteilen(Schurke schurke) {
+		if(this.istKorrupt == false)
+			schurke.setIstVerurteilt(true);
 	}
 }
