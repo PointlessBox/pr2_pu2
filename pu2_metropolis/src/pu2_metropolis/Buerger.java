@@ -5,8 +5,8 @@ public class Buerger extends Mensch implements Steuerzahler {
 		super(name, einkommen, alter);
 	}
 	
-	@Override
-	public int getSteuerID() {
-		return this.steuerID;
-	}
+//	@Override
+//	public int getSteuerID() {
+//		return this.steuerID;
+//	}
 }

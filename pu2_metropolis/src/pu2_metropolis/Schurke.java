@@ -29,8 +29,8 @@ public class Schurke<G extends Mutant> extends Mutant<G> implements Steuerzahler
 		this.istVerurteilt = urteil;
 	}
 	
-	@Override
-	public int getSteuerID() {
-		return this.steuerID;
-	}
+//	@Override
+//	public int getSteuerID() {
+//		return this.steuerID;
+//	}
 }
