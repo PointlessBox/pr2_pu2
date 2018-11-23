@@ -1,6 +1,7 @@
 package pu2_metropolis;
 
 public interface Steuerzahler {
+	
 	public int getSteuerID();
 
 //	Hat keine funktion da die steuerID in der Klasse "Einwohner" 
