@@ -1,5 +1,7 @@
 package pu2_metropolis;
 
+import Unternehmen.Finanzamt;
+
 public class Metropolis_Test {
 	public static void main(String args[]) {
 		
@@ -8,9 +10,10 @@ public class Metropolis_Test {
 		Schurke s1 = new Schurke("BigDick", 8000, "50cm Fleischpeitsche", Superkraft.ONEPUNCH, Superkraft.KAFFEE, Superkraft.SUPERSTAERKE);
 		Superheld sh1 = new Superheld("FaggotMan", 500, "gebleichter Anus", Superkraft.UNSTERBLICHKEIT);
 		
-		System.out.println(b1.getSteuerID());
-		System.out.println(s1.getSteuerID());
+	//	System.out.println(b1.getSteuerID());
+	//	System.out.println(s1.getSteuerID());
 		
+		//System.out.println(Finanzamt.getFinanzamt().berechne();
 		s1.kaempfe(sh1);
 	}
 }

@@ -16,6 +16,8 @@ public class Kapitalgesellschaft extends Unternehmen{
 	public Kapitalgesellschaft (String name, int gewinn, Buerger... mitglieder) {
 		super(name, gewinn);
 		setMitglieder(mitglieder);
+		//keine ahung warum dsa nich geht
+		Finanzamt.getFinanzamt().getSteuerzahler().add(this);
 	}
 	
 	/*

@@ -3,6 +3,7 @@ package Unternehmen;
 import java.util.List;
 
 import pu2_metropolis.Buerger;
+import pu2_metropolis.Steuerzahler;
 
 public class Personengesellschaft extends Unternehmen {
 	
@@ -13,6 +14,8 @@ public class Personengesellschaft extends Unternehmen {
 		public Personengesellschaft (String name, int gewinn, Buerger... mitglieder) {
 			super(name, gewinn);
 			setMitglieder(mitglieder);
+			//keine ahung warum dsa nich geht
+			Finanzamt.getFinanzamt().getSteuerzahler().add(this);
 		}
 		
 		/*

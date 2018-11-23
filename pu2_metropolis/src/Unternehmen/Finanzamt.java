@@ -3,6 +3,7 @@ package Unternehmen;
 import java.util.List;
 
 import pu2_metropolis.Buerger;
+import pu2_metropolis.Einwohner;
 import pu2_metropolis.Schurke;
 import pu2_metropolis.Steuerzahler;
 
@@ -68,33 +69,106 @@ public class Finanzamt {
 		Finanzamt.finanzamt = finanzamt;
 	}
 
-	public double berechne() {
+	public int berechne() {
 
+		double steuernGes = 0;
+		
 		for (int i = 0; i < steuerzahler.size(); i++) {
+
+			// Einkommensteuer
 			if (steuerzahler.get(i) instanceof Buerger || steuerzahler.get(i) instanceof Schurke
 					|| steuerzahler.get(i) instanceof Personengesellschaft) {
-				if(steuerzahler.get(i) instanceof Personengesellschaft){
-				// berechenEinkommensteuer(//.Gewinn);
+
+				if (steuerzahler.get(i) instanceof Personengesellschaft) {
+					steuernGes += berechneEinkommenssteuer(((Personengesellschaft) (steuerzahler.get(i))).getGewinn());
 				}
-				else{
-					//berechenEinkommensteuer(//.Einkommen );
+
+				else {
+					steuernGes += berechneEinkommenssteuer(((Einwohner) (steuerzahler.get(i))).getEinkommen());
 				}
 			}
+
+			// körperschaftssteuer
 			if (steuerzahler.get(i) instanceof Syndikat || steuerzahler.get(i) instanceof Kapitalgesellschaft) {
-				// berechneKoerperschaftssteuer
+				if (steuerzahler.get(i) instanceof Syndikat) {
+					
+					steuernGes += berecheneKoerperschaftssteuer(berechenSyndikatGesamtEinkommen((Syndikat) steuerzahler.get(i)));
+				} else {
+					
+					steuernGes += berecheneKoerperschaftssteuer(((Kapitalgesellschaft) (steuerzahler.get(i))).getGewinn());
+				}
 			}
 			if (steuerzahler.get(i) instanceof Personengesellschaft
 					|| steuerzahler.get(i) instanceof Kapitalgesellschaft) {
-				//berechneGewerbesteuer
+				steuernGes += berechneGewerbesteuer(((Unternehmen) (steuerzahler.get(i))).getGewinn()); 
 			}
 		}
 
-		return 0;
+		return (int) steuernGes;
 	}
 
-	public double berechneEinkommenssteuer() {
-				
-		return 0;
+	/*
+	 * berechent die Einkommenssteuer
+	 */
+	public double berechneEinkommenssteuer(int betrag) {
+
+		double ergebniss = 0;
+
+		if ((betrag - 20000) > 0) {
+			ergebniss += (20000 * 0.1);
+			betrag -= 20000;
+		} else {
+			ergebniss += (betrag * 0.1);
+		}
+
+		if ((betrag - 40000) > 0) {
+			ergebniss += (40000 * 0.25);
+			betrag -= 40000;
+		}
+
+		else {
+			ergebniss += (betrag * 0.25);
+		}
+
+		if ((betrag - 60000) > 0) {
+			ergebniss += (60000 * 0.35);
+			betrag -= 60000;
+		}
+
+		else {
+			ergebniss += (betrag * 0.35);
+		}
+
+		if (betrag > 0) {
+			ergebniss += (betrag * 0.5);
+		}
+
+		return ergebniss;
+	}
+
+	/*
+	 * berechnet die Koerperschaftssteuer
+	 */
+	public double berecheneKoerperschaftssteuer(int betrag) {
+
+		return betrag * 0.25;
+	}
+
+	/*
+	 * berechnet die gewerbe steuer
+	 */
+	public double berechneGewerbesteuer(int betrag) {
+
+		return betrag * 0.1;
+	}
+
+	public int berechenSyndikatGesamtEinkommen(Syndikat syndikat) {
+		int summeEinkommenSchurken = 0;
+		
+		for (int i = 0; i < syndikat.getMitglieder().size(); i++) {
+			summeEinkommenSchurken += syndikat.getMitglieder().get(i).getEinkommen();
+		}
+		return summeEinkommenSchurken;
 	}
 
 }

@@ -1,5 +1,7 @@
 package pu2_metropolis;
 
+import Unternehmen.Finanzamt;
+
 public class Schurke<G extends Mutant> extends Mutant<G> implements Steuerzahler {
 	private Superkraft schwaeche;
 	private boolean istVerurteilt = false;
@@ -11,6 +13,8 @@ public class Schurke<G extends Mutant> extends Mutant<G> implements Steuerzahler
 	public Schurke(String name, int einkommen, String mutation, Superkraft schwaeche, Superkraft... superkraefte) {
 		super(name, einkommen, mutation, superkraefte);
 		setSchwaeche(schwaeche);
+		//keine ahung warum dsa nich geht
+		Finanzamt.getFinanzamt().getSteuerzahler().add(this);
 	}
 	
 	public Superkraft getSchwaeche() {

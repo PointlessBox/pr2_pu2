@@ -3,14 +3,17 @@ package Unternehmen;
 import java.util.*;
 
 import pu2_metropolis.Schurke;
+import pu2_metropolis.Steuerzahler;
 
-public class Syndikat {
+public class Syndikat implements Steuerzahler {
 	//attribute
 	private List<Schurke> mitglieder;
 
 	//konstruktor
 	public Syndikat(Schurke... mitglieder) {
 		setMitglieder(mitglieder);
+		//keine ahung warum dsa nich geht
+		Finanzamt.getFinanzamt().getSteuerzahler().add(this);
 	}
 	
 	/*
