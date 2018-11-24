@@ -15,13 +15,14 @@ public class Finanzamt {
 	/*
 	 * Attribute
 	 */
+//	Liste von Steuerzahlern muss bei Steuerzahler in Konstruktor initialisiert werden und
+//	evtl muss Liste direkt initialisiert werden
 	private List<Steuerzahler> steuerzahler;
 	private int steuerInsgesamt;
 
 	// Konstruktor
 
-	public Finanzamt(Steuerzahler... steuerzahler) {
-		setSteuerzahler(steuerzahler);
+	private Finanzamt() {
 	}
 
 	/*
@@ -112,6 +113,7 @@ public class Finanzamt {
 	 */
 	public double berechneEinkommenssteuer(int betrag) {
 
+//		Ergebnis mit einem S eintragen
 		double ergebniss = 0;
 
 		if ((betrag - 20000) > 0) {

@@ -15,12 +15,15 @@ public abstract class Unternehmen implements Steuerzahler {
 	public String getName() {
 		return name;
 	}
+	
 	private void setName(String name) {
 		this.name = name;
 	}
+	
 	public int getGewinn() {
 		return gewinn;
 	}
+	
 	private void setGewinn(int gewinn) {
 		this.gewinn = gewinn;
 	}
