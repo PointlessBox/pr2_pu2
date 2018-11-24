@@ -1,4 +1,4 @@
-package pu2_metropolis;
+package einwohner;
 
 public interface Steuerzahler {
 

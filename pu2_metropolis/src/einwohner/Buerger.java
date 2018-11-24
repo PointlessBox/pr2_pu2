@@ -1,6 +1,6 @@
-package pu2_metropolis;
+package einwohner;
 
-import Unternehmen.Finanzamt;
+import unternehmen.Finanzamt;
 
 public class Buerger extends Mensch implements Steuerzahler {
 	public Buerger(String name, int einkommen, int alter) {

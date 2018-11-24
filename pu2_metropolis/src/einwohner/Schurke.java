@@ -1,6 +1,6 @@
-package pu2_metropolis;
+package einwohner;
 
-import Unternehmen.Finanzamt;
+import unternehmen.Finanzamt;
 
 public class Schurke<G extends Mutant> extends Mutant<G> implements Steuerzahler {
 	private Superkraft schwaeche;

@@ -1,4 +1,4 @@
-package pu2_metropolis;
+package einwohner;
 
 public enum Superkraft {
 // Sinnvolle Superkräfte, welche sich gegenseitig kontern, auswählen

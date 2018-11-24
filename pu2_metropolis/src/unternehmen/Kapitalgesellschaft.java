@@ -1,8 +1,8 @@
-package Unternehmen;
+package unternehmen;
 
 import java.util.List;
 
-import pu2_metropolis.Buerger;
+import einwohner.Buerger;
 
 public class Kapitalgesellschaft extends Unternehmen{
 	/*

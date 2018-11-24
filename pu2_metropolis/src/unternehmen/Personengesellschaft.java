@@ -1,9 +1,9 @@
-package Unternehmen;
+package unternehmen;
 
 import java.util.List;
 
-import pu2_metropolis.Buerger;
-import pu2_metropolis.Steuerzahler;
+import einwohner.Buerger;
+import einwohner.Steuerzahler;
 
 public class Personengesellschaft extends Unternehmen {
 	

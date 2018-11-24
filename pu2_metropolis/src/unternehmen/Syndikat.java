@@ -1,9 +1,9 @@
-package Unternehmen;
+package unternehmen;
 
 import java.util.*;
 
-import pu2_metropolis.Schurke;
-import pu2_metropolis.Steuerzahler;
+import einwohner.Schurke;
+import einwohner.Steuerzahler;
 
 public class Syndikat implements Steuerzahler {
 	//attribute

@@ -1,4 +1,4 @@
-package pu2_metropolis;
+package einwohner;
 
 public abstract class Mensch extends Einwohner {
 	private int alter;

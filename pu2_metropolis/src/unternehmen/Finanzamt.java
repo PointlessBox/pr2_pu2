@@ -1,11 +1,11 @@
-package Unternehmen;
+package unternehmen;
 
 import java.util.List;
 
-import pu2_metropolis.Buerger;
-import pu2_metropolis.Einwohner;
-import pu2_metropolis.Schurke;
-import pu2_metropolis.Steuerzahler;
+import einwohner.Buerger;
+import einwohner.Einwohner;
+import einwohner.Schurke;
+import einwohner.Steuerzahler;
 
 public class Finanzamt {
 
@@ -88,7 +88,7 @@ public class Finanzamt {
 				}
 			}
 
-			// körperschaftssteuer
+			// kï¿½rperschaftssteuer
 			if (steuerzahler.get(i) instanceof Syndikat || steuerzahler.get(i) instanceof Kapitalgesellschaft) {
 				if (steuerzahler.get(i) instanceof Syndikat) {
 					

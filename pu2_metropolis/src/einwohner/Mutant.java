@@ -1,4 +1,4 @@
-package pu2_metropolis;
+package einwohner;
 
 import java.util.*;
 

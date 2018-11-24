@@ -1,6 +1,6 @@
-package Unternehmen;
+package unternehmen;
 
-import pu2_metropolis.Steuerzahler;
+import einwohner.Steuerzahler;
 
 public abstract class Unternehmen implements Steuerzahler {
 	

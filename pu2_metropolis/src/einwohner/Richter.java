@@ -1,4 +1,4 @@
-package pu2_metropolis;
+package einwohner;
 
 public class Richter extends Mensch {
 	private boolean istKorrupt;
