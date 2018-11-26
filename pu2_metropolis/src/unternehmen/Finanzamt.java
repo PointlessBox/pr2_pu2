@@ -17,7 +17,7 @@ public class Finanzamt {
 	 */
 //	Liste von Steuerzahlern muss bei Steuerzahler in Konstruktor initialisiert werden und
 //	evtl muss Liste direkt initialisiert werden
-	private ArrayList<Steuerzahler> steuerzahler = new ArrayList<>();
+	private List<Steuerzahler> steuerzahler = new LinkedList<>();
 	private int steuerInsgesamt;
 
 	// Konstruktor
@@ -28,8 +28,8 @@ public class Finanzamt {
 	/*
 	 * getter
 	 */
-	public ArrayList<Steuerzahler> getSteuerzahler() {
-		return steuerzahler;
+	public List<Steuerzahler> getSteuerzahler() {
+		return  steuerzahler;
 	}
 
 	/*

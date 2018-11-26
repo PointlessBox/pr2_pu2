@@ -7,7 +7,7 @@ import einwohner.Steuerzahler;
 
 public class Syndikat implements Steuerzahler {
 	//attribute
-	private ArrayList<Schurke> mitglieder = new ArrayList<>();
+	private List<Schurke> mitglieder = new LinkedList<>();
 
 	//konstruktor
 	public Syndikat(Schurke... mitglieder) {
@@ -26,7 +26,7 @@ public class Syndikat implements Steuerzahler {
 		}
 	}
 	
-	public ArrayList<Schurke> getMitglieder() {
+	public List<Schurke> getMitglieder() {
 		
 		return this.mitglieder;
 	}

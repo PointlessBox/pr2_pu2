@@ -8,7 +8,7 @@ public class Kapitalgesellschaft extends Unternehmen{
 	/*
 	 * Attribute
 	 */
-		private ArrayList<Buerger> gesellschafter = new ArrayList<>();
+		private List<Buerger> gesellschafter = new LinkedList<>();
 
 	/*
 	 * Konstruktor
@@ -32,7 +32,7 @@ public class Kapitalgesellschaft extends Unternehmen{
 	/*
 	 * getter
 	 */
-	public ArrayList<Buerger> getMitglieder() {
+	public List<Buerger> getMitglieder() {
 		
 		return this.gesellschafter;
 	}
