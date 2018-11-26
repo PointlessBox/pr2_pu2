@@ -17,7 +17,11 @@ public class Richter extends Mensch {
 	}
 	
 	public void verurteilen(Schurke schurke) {
-		if(this.istKorrupt == false)
+		if(this.istKorrupt == false) {
 			schurke.setIstVerurteilt(true);
+			System.out.println(schurke.getName() + " wurde verurteilt");
+		}
+		else 
+			System.out.println(schurke.getName() + " wurde nicht verurteilt");
 	}
 }

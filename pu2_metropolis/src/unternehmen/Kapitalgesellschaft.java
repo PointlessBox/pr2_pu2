@@ -1,6 +1,6 @@
 package unternehmen;
 
-import java.util.List;
+import java.util.*;
 
 import einwohner.Buerger;
 
@@ -8,7 +8,7 @@ public class Kapitalgesellschaft extends Unternehmen{
 	/*
 	 * Attribute
 	 */
-		private List<Buerger> gesellschafter;
+		private ArrayList<Buerger> gesellschafter = new ArrayList<>();
 
 	/*
 	 * Konstruktor
@@ -32,7 +32,7 @@ public class Kapitalgesellschaft extends Unternehmen{
 	/*
 	 * getter
 	 */
-	public List<Buerger> getMitglieder() {
+	public ArrayList<Buerger> getMitglieder() {
 		
 		return this.gesellschafter;
 	}

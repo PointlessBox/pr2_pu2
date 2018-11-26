@@ -1,6 +1,6 @@
 package unternehmen;
 
-import java.util.List;
+import java.util.*;
 
 import einwohner.Buerger;
 import einwohner.Steuerzahler;
@@ -8,7 +8,7 @@ import einwohner.Steuerzahler;
 public class Personengesellschaft extends Unternehmen {
 	
 		//attribute
-		private List<Buerger> inhaber;
+		private ArrayList<Buerger> inhaber = new ArrayList<>();
 
 		//konstruktor
 		public Personengesellschaft (String name, int gewinn, Buerger... mitglieder) {
@@ -28,7 +28,7 @@ public class Personengesellschaft extends Unternehmen {
 			}
 		}
 		
-		public List<Buerger> getMitglieder() {
+		public ArrayList<Buerger> getMitglieder() {
 			
 			return this.inhaber;
 		}

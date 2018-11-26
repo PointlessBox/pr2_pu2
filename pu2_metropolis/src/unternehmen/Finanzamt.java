@@ -28,7 +28,7 @@ public class Finanzamt {
 	/*
 	 * getter
 	 */
-	public List<Steuerzahler> getSteuerzahler() {
+	public ArrayList<Steuerzahler> getSteuerzahler() {
 		return steuerzahler;
 	}
 
@@ -73,7 +73,7 @@ public class Finanzamt {
 	public int berechne() {
 
 		double steuernGes = 0;
-		
+
 		for (int i = 0; i < steuerzahler.size(); i++) {
 
 			// Einkommensteuer
@@ -92,16 +92,18 @@ public class Finanzamt {
 			// k�rperschaftssteuer
 			if (steuerzahler.get(i) instanceof Syndikat || steuerzahler.get(i) instanceof Kapitalgesellschaft) {
 				if (steuerzahler.get(i) instanceof Syndikat) {
-					
-					steuernGes += berecheneKoerperschaftssteuer(berechenSyndikatGesamtEinkommen((Syndikat) steuerzahler.get(i)));
+
+					steuernGes += berechneKoerperschaftssteuer(
+							berechenSyndikatGesamtEinkommen((Syndikat) steuerzahler.get(i)));
 				} else {
-					
-					steuernGes += berecheneKoerperschaftssteuer(((Kapitalgesellschaft) (steuerzahler.get(i))).getGewinn());
+
+					steuernGes += berechneKoerperschaftssteuer(
+							((Kapitalgesellschaft) (steuerzahler.get(i))).getGewinn());
 				}
 			}
 			if (steuerzahler.get(i) instanceof Personengesellschaft
 					|| steuerzahler.get(i) instanceof Kapitalgesellschaft) {
-				steuernGes += berechneGewerbesteuer(((Unternehmen) (steuerzahler.get(i))).getGewinn()); 
+				steuernGes += berechneGewerbesteuer(((Unternehmen) (steuerzahler.get(i))).getGewinn());
 			}
 		}
 
@@ -120,7 +122,7 @@ public class Finanzamt {
 			ergebniss += (20000 * 0.1);
 			betrag -= 20000;
 		} else {
-			ergebniss += (betrag * 0.1);
+			return ergebniss += (betrag * 0.1);
 		}
 
 		if ((betrag - 40000) > 0) {
@@ -129,7 +131,7 @@ public class Finanzamt {
 		}
 
 		else {
-			ergebniss += (betrag * 0.25);
+			return ergebniss += (betrag * 0.25);
 		}
 
 		if ((betrag - 60000) > 0) {
@@ -138,11 +140,11 @@ public class Finanzamt {
 		}
 
 		else {
-			ergebniss += (betrag * 0.35);
+			return ergebniss += (betrag * 0.35);
 		}
 
 		if (betrag > 0) {
-			ergebniss += (betrag * 0.5);
+			return ergebniss += (betrag * 0.5);
 		}
 
 		return ergebniss;
@@ -151,7 +153,7 @@ public class Finanzamt {
 	/*
 	 * berechnet die Koerperschaftssteuer
 	 */
-	private double berecheneKoerperschaftssteuer(int betrag) {
+	private double berechneKoerperschaftssteuer(int betrag) {
 
 		return betrag * 0.25;
 	}
@@ -166,7 +168,7 @@ public class Finanzamt {
 
 	private int berechenSyndikatGesamtEinkommen(Syndikat syndikat) {
 		int summeEinkommenSchurken = 0;
-		
+
 		for (int i = 0; i < syndikat.getMitglieder().size(); i++) {
 			summeEinkommenSchurken += syndikat.getMitglieder().get(i).getEinkommen();
 		}
