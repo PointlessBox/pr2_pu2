@@ -13,7 +13,8 @@ public class Metropolis_Test {
 	//	System.out.println(b1.getSteuerID());
 	//	System.out.println(s1.getSteuerID());
 		
-		//System.out.println(Finanzamt.getFinanzamt().berechne();
+	//	System.out.println(Finanzamt.getFinanzamt().berechne();
 		s1.kaempfe(sh1);
+		System.out.println(Finanzamt.getFinanzamt().berechne());
 	}
 }

@@ -1,6 +1,6 @@
 package unternehmen;
 
-import java.util.List;
+import java.util.*;
 
 import einwohner.Buerger;
 import einwohner.Einwohner;
@@ -17,7 +17,7 @@ public class Finanzamt {
 	 */
 //	Liste von Steuerzahlern muss bei Steuerzahler in Konstruktor initialisiert werden und
 //	evtl muss Liste direkt initialisiert werden
-	private List<Steuerzahler> steuerzahler;
+	private ArrayList<Steuerzahler> steuerzahler = new ArrayList<>();
 	private int steuerInsgesamt;
 
 	// Konstruktor
@@ -111,7 +111,7 @@ public class Finanzamt {
 	/*
 	 * berechent die Einkommenssteuer
 	 */
-	public double berechneEinkommenssteuer(int betrag) {
+	private double berechneEinkommenssteuer(int betrag) {
 
 //		Ergebnis mit einem S eintragen
 		double ergebniss = 0;
@@ -151,7 +151,7 @@ public class Finanzamt {
 	/*
 	 * berechnet die Koerperschaftssteuer
 	 */
-	public double berecheneKoerperschaftssteuer(int betrag) {
+	private double berecheneKoerperschaftssteuer(int betrag) {
 
 		return betrag * 0.25;
 	}
@@ -159,12 +159,12 @@ public class Finanzamt {
 	/*
 	 * berechnet die gewerbe steuer
 	 */
-	public double berechneGewerbesteuer(int betrag) {
+	private double berechneGewerbesteuer(int betrag) {
 
 		return betrag * 0.1;
 	}
 
-	public int berechenSyndikatGesamtEinkommen(Syndikat syndikat) {
+	private int berechenSyndikatGesamtEinkommen(Syndikat syndikat) {
 		int summeEinkommenSchurken = 0;
 		
 		for (int i = 0; i < syndikat.getMitglieder().size(); i++) {
