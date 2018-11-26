@@ -118,14 +118,14 @@ public class Finanzamt {
 //		Ergebnis mit einem S eintragen
 		double ergebniss = 0;
 
-		if ((betrag - 20000) > 0) {
+		if (betrag > 20000) {
 			ergebniss += (20000 * 0.1);
 			betrag -= 20000;
 		} else {
 			return ergebniss += (betrag * 0.1);
 		}
 
-		if ((betrag - 40000) > 0) {
+		if (betrag > 40000) {
 			ergebniss += (40000 * 0.25);
 			betrag -= 40000;
 		}
@@ -134,7 +134,7 @@ public class Finanzamt {
 			return ergebniss += (betrag * 0.25);
 		}
 
-		if ((betrag - 60000) > 0) {
+		if (betrag > 60000) {
 			ergebniss += (60000 * 0.35);
 			betrag -= 60000;
 		}
