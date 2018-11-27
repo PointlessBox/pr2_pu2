@@ -2,5 +2,5 @@ package einwohner;
 
 public enum Superkraft {
 // Sinnvolle Superkräfte, welche sich gegenseitig kontern, auswählen
-	SUPERSTAERKE, UNSTERBLICHKEIT, ONEPUNCH, KAFFEE
+	SUPERSTARK, UNSTERBLICHKEIT, UNSICHTBARKEIT, SUPERSPEED, SUPERFEUER, ONEPUNCH, KAFFEEPOWER 
 }

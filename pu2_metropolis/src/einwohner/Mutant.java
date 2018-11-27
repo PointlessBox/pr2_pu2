@@ -1,8 +1,7 @@
 package einwohner;
 
-import java.util.*;
 
-public abstract class Mutant<G extends Mutant> extends Einwohner {
+public abstract class Mutant<G extends Mutant<?>> extends Einwohner {
 	private String mutation;
 	private Superkraft[] superkraefte;
 	boolean istBesiegt = false;
@@ -60,14 +59,14 @@ public abstract class Mutant<G extends Mutant> extends Einwohner {
 		boolean hatGewonnen = false;
 		if (gegner instanceof Schurke) {
 			for (Superkraft kraft : this.superkraefte) {
-				if (kraft == ((Schurke) gegner).getSchwaeche())
+				if (kraft == ((Schurke<?>) gegner).getSchwaeche())
 					hatGewonnen = true;
 				else
 					hatGewonnen = false;
 			}
 		} else if (gegner instanceof Superheld) {
 			for (Superkraft kraft : gegner.getSuperkraefte()) {
-				if (kraft == ((Schurke) this).getSchwaeche())
+				if (kraft == ((Schurke<?>) this).getSchwaeche())
 					hatGewonnen = false;
 				else
 					hatGewonnen = true;

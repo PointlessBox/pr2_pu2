@@ -22,7 +22,7 @@ public class Finanzamt {
 
 	// Konstruktor
 
-	private Finanzamt() {
+	public Finanzamt() {
 	}
 
 	/*
@@ -71,9 +71,9 @@ public class Finanzamt {
 	}
 
 	public int berechne() {
-
+		
 		double steuernGes = 0;
-
+		
 		for (int i = 0; i < steuerzahler.size(); i++) {
 
 			// Einkommensteuer
@@ -84,23 +84,24 @@ public class Finanzamt {
 					steuernGes += berechneEinkommenssteuer(((Personengesellschaft) (steuerzahler.get(i))).getGewinn());
 				}
 
-				else {
+				else if(steuerzahler.get(i) instanceof Buerger || steuerzahler.get(i) instanceof Schurke) {
 					steuernGes += berechneEinkommenssteuer(((Einwohner) (steuerzahler.get(i))).getEinkommen());
 				}
 			}
 
-			// k�rperschaftssteuer
+			// koerperschaftssteuer
 			if (steuerzahler.get(i) instanceof Syndikat || steuerzahler.get(i) instanceof Kapitalgesellschaft) {
 				if (steuerzahler.get(i) instanceof Syndikat) {
 
 					steuernGes += berechneKoerperschaftssteuer(
 							berechenSyndikatGesamtEinkommen((Syndikat) steuerzahler.get(i)));
-				} else {
+				} else if(steuerzahler.get(i) instanceof Kapitalgesellschaft){
 
 					steuernGes += berechneKoerperschaftssteuer(
 							((Kapitalgesellschaft) (steuerzahler.get(i))).getGewinn());
 				}
 			}
+			//Gewerbesteuer
 			if (steuerzahler.get(i) instanceof Personengesellschaft
 					|| steuerzahler.get(i) instanceof Kapitalgesellschaft) {
 				steuernGes += berechneGewerbesteuer(((Unternehmen) (steuerzahler.get(i))).getGewinn());

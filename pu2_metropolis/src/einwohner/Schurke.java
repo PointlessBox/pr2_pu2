@@ -2,7 +2,7 @@ package einwohner;
 
 import unternehmen.Finanzamt;
 
-public class Schurke<G extends Mutant> extends Mutant<G> implements Steuerzahler {
+public class Schurke<G extends Mutant<?>> extends Mutant<G> implements Steuerzahler {
 	private Superkraft schwaeche;
 	private boolean istVerurteilt = false;
 //	TODO
