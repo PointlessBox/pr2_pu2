@@ -14,8 +14,6 @@ import java.util.LinkedList;
 
 import org.junit.Test;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
-
 import einwohner.Buerger;
 import einwohner.Mutant;
 import einwohner.Richter;
@@ -67,13 +65,13 @@ import unternehmen.Syndikat;
 		Richter R1 = new Richter("R1", 10000, 60, false);
 		Richter R2 = new Richter("R2", 20000, 60, true);
 
-		Schurke<Mutant<?>> Sc1 = new Schurke<>("Sc1", 10000, "GroßeNase", Superkraft.SUPERSTARK, Superkraft.SUPERFEUER,
+		Schurke<Mutant<?>> Sc1 = new Schurke<>("Sc1", 10000, "Groï¿½eNase", Superkraft.SUPERSTARK, Superkraft.SUPERFEUER,
 				Superkraft.SUPERSPEED);
-		Schurke<Mutant<?>> Sc2 = new Schurke<>("Sc2", 20000, "GroßeNase", Superkraft.UNSICHTBARKEIT,
+		Schurke<Mutant<?>> Sc2 = new Schurke<>("Sc2", 20000, "Groï¿½eNase", Superkraft.UNSICHTBARKEIT,
 				Superkraft.SUPERFEUER);
-		Schurke<Mutant<?>> Sc3 = new Schurke<>("Sc3", 120000, "GroßeNase", Superkraft.UNSTERBLICHKEIT,
+		Schurke<Mutant<?>> Sc3 = new Schurke<>("Sc3", 120000, "Groï¿½eNase", Superkraft.UNSTERBLICHKEIT,
 				Superkraft.SUPERFEUER, Superkraft.UNSICHTBARKEIT);
-		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "GroßeNase", Superkraft.SUPERFEUER, Superkraft.SUPERSPEED);
+		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "Groï¿½eNase", Superkraft.SUPERFEUER, Superkraft.SUPERSPEED);
 
 		
 		Superheld<Mutant<?>> Su1 = new Superheld<>("Su1", 50000, "KleineNase", Superkraft.ONEPUNCH,
@@ -101,7 +99,7 @@ import unternehmen.Syndikat;
 //	 Welt1 a = new Welt1();
 	
 	 @Test //sollte 388000 raus kommen aber schleife bei berechenn in Junit geht 2*(list.size) in dem fall bis i = 24
-	 	   // in der main wird das richtig ausgeführt also 12 mal
+	 	   // in der main wird das richtig ausgefï¿½hrt also 12 mal
 		public void testBerechene() {
 
 		 	assertEquals(776000,Finanzamt.getFinanzamt().berechne());

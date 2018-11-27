@@ -4,11 +4,7 @@ package einwohner;
 public abstract class Mutant<G extends Mutant<?>> extends Einwohner {
 	private String mutation;
 	private Superkraft[] superkraefte;
-	boolean istBesiegt = false;
-//	TODO
-//	private boolean istBesiegt;
-//	UML-Diagramm angleichen
-//	getter/setter implementieren
+	private boolean istBesiegt = false;
 
 	public Mutant(String name, int einkommen, String mutation, Superkraft[] superkraefte) {
 		super(name, einkommen);

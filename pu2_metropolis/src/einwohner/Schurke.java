@@ -5,10 +5,6 @@ import unternehmen.Finanzamt;
 public class Schurke<G extends Mutant<?>> extends Mutant<G> implements Steuerzahler {
 	private Superkraft schwaeche;
 	private boolean istVerurteilt = false;
-//	TODO
-//	private boolean istVerurteilt;
-//	UML-Diagramm anpassen
-//	getter/setter implementieren
 	
 	public Schurke(String name, int einkommen, String mutation, Superkraft schwaeche, Superkraft... superkraefte) {
 		super(name, einkommen, mutation, superkraefte);
