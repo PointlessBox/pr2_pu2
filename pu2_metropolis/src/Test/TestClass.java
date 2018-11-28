@@ -1,16 +1,13 @@
 package Test;
-
-
+//@Parameters
+//public static Collection<Object[]> data(){
+//    return Arrays.asList(new Object[][] {
+//      {Type.SUBSTRACT, 3.0, 2.0, 1.0},
+//      {Type.ADD, 23.0, 5.0, 28.0}
+//    });
+//}
+//nvbbfgfgdfbb
 import static org.junit.Assert.assertEquals;
-
-import java.util.LinkedList;
-
-// {probier zu parametrisiren von metropolis}
-//import java.util.Arrays;
-//import java.util.Collection;
-//import org.junit.runner.RunWith;
-//import org.junit.runners.Parameterized;
-//import org.junit.runners.Parameterized.Parameters;
 
 import org.junit.Test;
 
@@ -24,14 +21,6 @@ import unternehmen.Finanzamt;
 import unternehmen.Kapitalgesellschaft;
 import unternehmen.Personengesellschaft;
 import unternehmen.Syndikat;
-
-//@Parameters
-//public static Collection<Object[]> data(){
-//    return Arrays.asList(new Object[][] {
-//      {Type.SUBSTRACT, 3.0, 2.0, 1.0},
-//      {Type.ADD, 23.0, 5.0, 28.0}
-//    });
-//}
 
 //@RunWith(Parameterized.class)
  public class TestClass {
