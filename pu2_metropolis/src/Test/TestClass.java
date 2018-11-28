@@ -6,7 +6,6 @@ package Test;
 //      {Type.ADD, 23.0, 5.0, 28.0}
 //    });
 //}
-//nvbbfgfgdfbb
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
