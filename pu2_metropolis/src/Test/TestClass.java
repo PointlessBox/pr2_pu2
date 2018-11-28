@@ -16,7 +16,6 @@ import einwohner.Richter;
 import einwohner.Schurke;
 import einwohner.Superheld;
 import einwohner.Superkraft;
-import einwohner.Metropolis_Test;
 import unternehmen.Finanzamt;
 import unternehmen.Kapitalgesellschaft;
 import unternehmen.Personengesellschaft;
@@ -90,8 +89,8 @@ import unternehmen.Syndikat;
 	 	   // in der main wird das richtig ausgef�hrt also 12 mal
 		public void testBerechene() {
 
-//		 	assertEquals(776000,Finanzamt.getFinanzamt().berechne());
-			assertEquals(388000,Finanzamt.getFinanzamt().berechne());
+		 	assertEquals(776000,Finanzamt.getFinanzamt().berechne());
+//			assertEquals(388000,Finanzamt.getFinanzamt().berechne());
 		}
 	
 	@Test 

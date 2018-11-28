@@ -36,11 +36,8 @@ public class Finanzamt {
 	/*
 	 * setter Steuerzahler
 	 */
-	public void setSteuerzahler(Steuerzahler[] steuerzahler) {
+	public void setSteuerzahler() {
 
-		for (int i = 0; i < steuerzahler.length; i++) {
-			this.steuerzahler.add(steuerzahler[i]);
-		}
 	}
 
 	/*
