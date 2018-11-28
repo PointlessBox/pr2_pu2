@@ -23,6 +23,7 @@ public class Finanzamt {
 	// Konstruktor
 
 	public Finanzamt() {
+		
 	}
 
 	/*
@@ -67,7 +68,6 @@ public class Finanzamt {
 	 * setter Finanzamt (Singelton)
 	 */
 	public static void setFinanzamt(Finanzamt finanzamt) {
-		Finanzamt.finanzamt = finanzamt;
 	}
 
 	public int berechne() {

@@ -16,7 +16,7 @@ public class Metropolis_Test {
 //		Superheld sh1 = new Superheld("Batman", 500, "Batsuite", Superkraft.UNSTERBLICHKEIT);
 //		Personengesellschaft u1 = new Personengesellschaft("egal", 10000, b1);
 //		Kapitalgesellschaft k1 = new Kapitalgesellschaft("egal2", 20000, b1);
-//		Schurke<?> S4 = new Schurke<>("S4", 10000, "GroßeNase", Superkraft.SUPERFEUER,  Superkraft.SUPERSPEED);
+//		Schurke<?> S4 = new Schurke<>("S4", 10000, "Groï¿½eNase", Superkraft.SUPERFEUER,  Superkraft.SUPERSPEED);
 //		
 //		System.out.println(S4.getSchwaeche());
 //		
@@ -44,13 +44,13 @@ public class Metropolis_Test {
 		Richter R1 = new Richter("R1", 10000, 60, false);
 		Richter R2 = new Richter("R2", 20000, 60, true);
 
-		Schurke<Mutant<?>> Sc1 = new Schurke<>("Sc1", 10000, "GroßeNase", Superkraft.SUPERSTARK, Superkraft.SUPERFEUER,
+		Schurke<Mutant<?>> Sc1 = new Schurke<>("Sc1", 10000, "Groï¿½eNase", Superkraft.SUPERSTARK, Superkraft.SUPERFEUER,
 				Superkraft.SUPERSPEED);
-		Schurke<Mutant<?>> Sc2 = new Schurke<>("Sc2", 20000, "GroßeNase", Superkraft.UNSICHTBARKEIT,
+		Schurke<Mutant<?>> Sc2 = new Schurke<>("Sc2", 20000, "Groï¿½eNase", Superkraft.UNSICHTBARKEIT,
 				Superkraft.SUPERFEUER);
-		Schurke<Mutant<?>> Sc3 = new Schurke<>("Sc3", 120000, "GroßeNase", Superkraft.UNSTERBLICHKEIT,
+		Schurke<Mutant<?>> Sc3 = new Schurke<>("Sc3", 120000, "Groï¿½eNase", Superkraft.UNSTERBLICHKEIT,
 				Superkraft.SUPERFEUER, Superkraft.UNSICHTBARKEIT);
-		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "GroßeNase", Superkraft.SUPERFEUER, Superkraft.SUPERSPEED);
+		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "Groï¿½eNase", Superkraft.SUPERFEUER, Superkraft.SUPERSPEED);
 
 		
 		Superheld<Mutant<?>> Su1 = new Superheld<>("Su1", 50000, "KleineNase", Superkraft.ONEPUNCH,

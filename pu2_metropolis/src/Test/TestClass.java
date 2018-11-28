@@ -65,13 +65,13 @@ import unternehmen.Syndikat;
 		Richter R1 = new Richter("R1", 10000, 60, false);
 		Richter R2 = new Richter("R2", 20000, 60, true);
 
-		Schurke<Mutant<?>> Sc1 = new Schurke<>("Sc1", 10000, "Gro�eNase", Superkraft.SUPERSTARK, Superkraft.SUPERFEUER,
+		Schurke<Mutant<?>> Sc1 = new Schurke<>("Sc1", 10000, "GrosseNase", Superkraft.SUPERSTARK, Superkraft.SUPERFEUER,
 				Superkraft.SUPERSPEED);
-		Schurke<Mutant<?>> Sc2 = new Schurke<>("Sc2", 20000, "Gro�eNase", Superkraft.UNSICHTBARKEIT,
+		Schurke<Mutant<?>> Sc2 = new Schurke<>("Sc2", 20000, "GrosseNase", Superkraft.UNSICHTBARKEIT,
 				Superkraft.SUPERFEUER);
-		Schurke<Mutant<?>> Sc3 = new Schurke<>("Sc3", 120000, "Gro�eNase", Superkraft.UNSTERBLICHKEIT,
+		Schurke<Mutant<?>> Sc3 = new Schurke<>("Sc3", 120000, "GrosseNase", Superkraft.UNSTERBLICHKEIT,
 				Superkraft.SUPERFEUER, Superkraft.UNSICHTBARKEIT);
-		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "Gro�eNase", Superkraft.SUPERFEUER, Superkraft.SUPERSPEED);
+		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "GrosseNase", Superkraft.SUPERFEUER, Superkraft.SUPERSPEED);
 
 		
 		Superheld<Mutant<?>> Su1 = new Superheld<>("Su1", 50000, "KleineNase", Superkraft.ONEPUNCH,
