@@ -71,7 +71,7 @@ public class Finanzamt {
 	}
 
 	public int berechne() {
-		
+//		System.out.println(this.getSteuerzahler());
 		double steuernGes = 0;
 		
 		for (int i = 0; i < steuerzahler.size(); i++) {

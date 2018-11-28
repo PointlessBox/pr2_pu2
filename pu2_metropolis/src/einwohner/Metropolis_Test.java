@@ -8,7 +8,7 @@ import unternehmen.Syndikat;
 import java.util.*;
 
 public class Metropolis_Test {
-	public static void main(String args[]) {
+/*	public static void main(String args[]) {
 //		
 //		Buerger b1 = new Buerger("Hans", 3000, 23);
 //		Richter r1 = new Richter("JudgeFudge", 20000, 35, false);
@@ -75,5 +75,5 @@ public class Metropolis_Test {
 		
 		System.out.println(Finanzamt.getFinanzamt().getSteuerzahler().size());
 		System.out.println(Finanzamt.getFinanzamt().berechne());
-	}
+	}	*/
 }
