@@ -37,12 +37,10 @@ public abstract class Mutant<G extends Mutant<?>> extends Einwohner {
 	}
 
 	public void kaempfe(G gegner) {
+		this.setIstBesiegt(false);
+		gegner.setIstBesiegt(false);
 		if (this.equals(gegner)) {
 			System.out.println("Ihr seid verbündet und solltet nicht kämpfen!");
-		} else if (this.getIstBesiegt()){
-			System.out.println(this.getName() + "ist bereits besiegt und kann nicht kämpfen!");
-		} else if (gegner.getIstBesiegt()) {
-			System.out.println(gegner.getName() + "ist bereits besiegt und kann nicht kämpfen!");
 		} else {
 			if (this.hatGewonnen(gegner)) {
 				System.out.println(this.getName() + " hat gewonnen! " + gegner.getName() + " zieht sich zurück!");

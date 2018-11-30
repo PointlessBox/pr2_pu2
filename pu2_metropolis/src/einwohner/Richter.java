@@ -16,7 +16,7 @@ public class Richter extends Mensch {
 		this.istKorrupt = istKorrupt;
 	}
 	
-	public void verurteilen(Schurke schurke) {
+	public void verurteilen(Schurke<?> schurke) {
 		if(this.istKorrupt == false) {
 			schurke.setIstVerurteilt(true);
 			System.out.println(schurke.getName() + " wurde verurteilt");

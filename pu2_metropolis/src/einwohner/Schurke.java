@@ -9,7 +9,6 @@ public class Schurke<G extends Mutant<?>> extends Mutant<G> implements Steuerzah
 	public Schurke(String name, int einkommen, String mutation, Superkraft schwaeche, Superkraft... superkraefte) {
 		super(name, einkommen, mutation, superkraefte);
 		setSchwaeche(schwaeche);
-		//keine ahung warum dsa nich geht
 		Finanzamt.getFinanzamt().getSteuerzahler().add(this);
 	}
 	
