@@ -105,8 +105,17 @@ import unternehmen.Syndikat;
 		}
 	
 	@Test 
-	public void test() {
-		assertEquals(4, 4);
+	public void richterTest() {
+		R1.verurteilen(Sc1);
+		R2.verurteilen(Sc2);
+		assertEquals(true, Sc1.getIstVerurteilt());
+		assertEquals(false, Sc2.getIstVerurteilt());
+		
+		R1.verurteilen(Sc2);
+		R2.verurteilen(Sc1);
+		assertEquals(true, Sc2.getIstVerurteilt());
+		assertEquals(false, Sc1.getIstVerurteilt());
+
 	}
 
 }
