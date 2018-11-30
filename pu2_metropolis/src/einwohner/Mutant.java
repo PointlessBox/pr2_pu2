@@ -39,13 +39,17 @@ public abstract class Mutant<G extends Mutant<?>> extends Einwohner {
 	public void kaempfe(G gegner) {
 		if (this.equals(gegner)) {
 			System.out.println("Ihr seid verbündet und solltet nicht kämpfen!");
+		} else if (this.getIstBesiegt()){
+			System.out.println(this.getName() + "ist bereits besiegt und kann nicht kämpfen!");
+		} else if (gegner.getIstBesiegt()) {
+			System.out.println(gegner.getName() + "ist bereits besiegt und kann nicht kämpfen!");
 		} else {
 			if (this.hatGewonnen(gegner)) {
 				System.out.println(this.getName() + " hat gewonnen! " + gegner.getName() + " zieht sich zurück!");
 				gegner.setIstBesiegt(true);
 			}
 			else {
-				System.out.println(gegner.getName() + " hat gewonnen! " + this.getName() + " ist besie!");
+				System.out.println(gegner.getName() + " hat gewonnen! " + this.getName() + " ist besiegt!");
 				this.setIstBesiegt(true);
 			}
 		}
@@ -54,17 +58,15 @@ public abstract class Mutant<G extends Mutant<?>> extends Einwohner {
 	private boolean hatGewonnen(G gegner) {
 		boolean hatGewonnen = false;
 		if (gegner instanceof Schurke) {
-			for (Superkraft kraft : this.superkraefte) {
+			for (Superkraft kraft : this.getSuperkraefte()) {
 				if (kraft == ((Schurke<?>) gegner).getSchwaeche())
-					hatGewonnen = true;
-				else
-					hatGewonnen = false;
+					return hatGewonnen = true;
 			}
 		} else if (gegner instanceof Superheld) {
 			for (Superkraft kraft : gegner.getSuperkraefte()) {
 				if (kraft == ((Schurke<?>) this).getSchwaeche())
-					hatGewonnen = false;
-				else
+					return hatGewonnen = false;
+				else 
 					hatGewonnen = true;
 			}
 		}

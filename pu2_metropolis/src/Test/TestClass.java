@@ -92,6 +92,17 @@ import unternehmen.Syndikat;
 		 	assertEquals(776000,Finanzamt.getFinanzamt().berechne());
 //			assertEquals(388000,Finanzamt.getFinanzamt().berechne());
 		}
+	 	@Test
+	 	public void kaempfeTest() {
+
+	 		Sc1.kaempfe(Su3);
+		 	assertEquals(true, Sc1.getIstBesiegt());
+		 	assertEquals(false, Su3.getIstBesiegt());
+		 	
+		 	Su1.kaempfe(Sc2);
+		 	assertEquals(false, Sc2.getIstBesiegt());
+		 	assertEquals(true, Su1.getIstBesiegt());
+		}
 	
 	@Test 
 	public void test() {

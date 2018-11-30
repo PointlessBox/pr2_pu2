@@ -5,10 +5,12 @@ import unternehmen.Kapitalgesellschaft;
 import unternehmen.Personengesellschaft;
 import unternehmen.Syndikat;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.*;
 
 public class Metropolis_Test {
-/*	public static void main(String args[]) {
+	public static void main(String args[]) {
 //		
 //		Buerger b1 = new Buerger("Hans", 3000, 23);
 //		Richter r1 = new Richter("JudgeFudge", 20000, 35, false);
@@ -75,5 +77,15 @@ public class Metropolis_Test {
 		
 		System.out.println(Finanzamt.getFinanzamt().getSteuerzahler().size());
 		System.out.println(Finanzamt.getFinanzamt().berechne());
-	}	*/
+		
+		Sc1.kaempfe(Su3);
+		System.out.println(Sc1.getIstBesiegt() + ", " + Su3.getIstBesiegt());
+//	 	assertEquals(true, Sc1.getIstBesiegt());
+//	 	assertEquals(false, Su3.getIstBesiegt());
+	 	
+	 	Su1.kaempfe(Sc2);
+	 	System.out.println(Su1.getIstBesiegt() + ", " + Sc2.getIstBesiegt());
+//	 	assertEquals(false, Sc2.getIstBesiegt());
+//	 	assertEquals(true, Su1.getIstBesiegt());
+	}	
 }
