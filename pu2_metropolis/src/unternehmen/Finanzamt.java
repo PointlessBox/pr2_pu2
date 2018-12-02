@@ -7,70 +7,93 @@ import einwohner.Einwohner;
 import einwohner.Schurke;
 import einwohner.Steuerzahler;
 
+/**
+ * Objekt Finanzamt
+ * 
+ * @author Rosario & Fabian
+ *
+ */
 public class Finanzamt {
 
-	// singelton
+	/**
+	 * Singelton Finanzamt ( Da es in einer Simulation auch nur ein Finanzamt geben
+	 * soll)
+	 */
 	private static Finanzamt finanzamt = new Finanzamt();
 
-	/*
+	/**
 	 * Attribute
 	 */
-//	Liste von Steuerzahlern muss bei Steuerzahler in Konstruktor initialisiert werden und
-//	evtl muss Liste direkt initialisiert werden
 	private List<Steuerzahler> steuerzahler = new LinkedList<>();
 	private int steuerInsgesamt;
 
-	// Konstruktor
-
+	/**
+	 * Konstruktor
+	 */
 	public Finanzamt() {
-		
+
 	}
 
-	/*
-	 * getter
+	/**
+	 * Getter
+	 * 
+	 * @return steuerzahler
 	 */
 	public List<Steuerzahler> getSteuerzahler() {
-		return  steuerzahler;
+		return steuerzahler;
 	}
 
-	/*
-	 * setter Steuerzahler
+	/**
+	 * Setter
 	 */
 	public void setSteuerzahler() {
 
 	}
 
-	/*
-	 * getter SteuerInsgesamt
+	/**
+	 * Getter
+	 * 
+	 * @return steuerInsgesamt
 	 */
 	public int getSteuerInsgesamt() {
 		return steuerInsgesamt;
 	}
 
-	/*
-	 * setter SteuerInsgesamt
+	/**
+	 * Setter
+	 * 
+	 * @param steuerInsgesamt
 	 */
 	public void setSteuerInsgesamt(int steuerInsgesamt) {
 		this.steuerInsgesamt = steuerInsgesamt;
 	}
 
-	/*
-	 * getter Finanzamt (Singelton)
+	/**
+	 * Getter
+	 * 
+	 * @return finanzamt
 	 */
 	public static Finanzamt getFinanzamt() {
 		return finanzamt;
 	}
 
-	/*
-	 * setter Finanzamt (Singelton)
+	/**
+	 * Setter
+	 * 
+	 * @param finanzamt
 	 */
 	public static void setFinanzamt(Finanzamt finanzamt) {
 	}
 
+	/**
+	 * Berechnet die GesamtSteuer der Simulation
+	 * 
+	 * @return steuerGesamt
+	 */
 	public int berechne() {
-//		System.out.println(this.getSteuerzahler());
+
 		double steuernGes = 0;
-		
+
 		for (int i = 0; i < steuerzahler.size(); i++) {
 
 			// Einkommensteuer
@@ -81,7 +104,7 @@ public class Finanzamt {
 					steuernGes += berechneEinkommenssteuer(((Personengesellschaft) (steuerzahler.get(i))).getGewinn());
 				}
 
-				else if(steuerzahler.get(i) instanceof Buerger || steuerzahler.get(i) instanceof Schurke) {
+				else if (steuerzahler.get(i) instanceof Buerger || steuerzahler.get(i) instanceof Schurke) {
 					steuernGes += berechneEinkommenssteuer(((Einwohner) (steuerzahler.get(i))).getEinkommen());
 				}
 			}
@@ -92,13 +115,13 @@ public class Finanzamt {
 
 					steuernGes += berechneKoerperschaftssteuer(
 							berechenSyndikatGesamtEinkommen((Syndikat) steuerzahler.get(i)));
-				} else if(steuerzahler.get(i) instanceof Kapitalgesellschaft){
+				} else if (steuerzahler.get(i) instanceof Kapitalgesellschaft) {
 
 					steuernGes += berechneKoerperschaftssteuer(
 							((Kapitalgesellschaft) (steuerzahler.get(i))).getGewinn());
 				}
 			}
-			//Gewerbesteuer
+			// Gewerbesteuer
 			if (steuerzahler.get(i) instanceof Personengesellschaft
 					|| steuerzahler.get(i) instanceof Kapitalgesellschaft) {
 				steuernGes += berechneGewerbesteuer(((Unternehmen) (steuerzahler.get(i))).getGewinn());
@@ -108,12 +131,15 @@ public class Finanzamt {
 		return (int) steuernGes;
 	}
 
-	/*
-	 * berechent die Einkommenssteuer
+	/**
+	 * Hilfsmethode für berechne berechent die Einkommenssteuer(gibt double zurück
+	 * für genauere berechnungen , damit nur einmal gerundet wird falls nötig)
+	 * 
+	 * @param betrag
+	 * @return Einkommenssteuer des Objekts
 	 */
 	private double berechneEinkommenssteuer(int betrag) {
 
-//		Ergebnis mit einem S eintragen
 		double ergebniss = 0;
 
 		if (betrag > 20000) {
@@ -148,22 +174,34 @@ public class Finanzamt {
 		return ergebniss;
 	}
 
-	/*
-	 * berechnet die Koerperschaftssteuer
+	/**
+	 * Hilfsmethode für berechne berechnet die Koerperschaftssteuer
+	 * 
+	 * @param betrag
+	 * @return Koerperschaftsteuers des Objekts
 	 */
 	private double berechneKoerperschaftssteuer(int betrag) {
 
 		return betrag * 0.25;
 	}
 
-	/*
-	 * berechnet die gewerbe steuer
+	/**
+	 * Hilfmethoder für berechne Berechnet die Gewerbesteuer
+	 * 
+	 * @param betrag
+	 * @return gewerbesteuer des Objekts
 	 */
 	private double berechneGewerbesteuer(int betrag) {
 
 		return betrag * 0.1;
 	}
 
+	/**
+	 * Hilfmethoder für berechene
+	 * 
+	 * @param syndikat
+	 * @return
+	 */
 	private int berechenSyndikatGesamtEinkommen(Syndikat syndikat) {
 		int summeEinkommenSchurken = 0;
 

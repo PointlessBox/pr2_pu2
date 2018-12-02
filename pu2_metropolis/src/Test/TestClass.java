@@ -1,11 +1,5 @@
 package Test;
-//@Parameters
-//public static Collection<Object[]> data(){
-//    return Arrays.asList(new Object[][] {
-//      {Type.SUBSTRACT, 3.0, 2.0, 1.0},
-//      {Type.ADD, 23.0, 5.0, 28.0}
-//    });
-//}
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -21,31 +15,22 @@ import unternehmen.Kapitalgesellschaft;
 import unternehmen.Personengesellschaft;
 import unternehmen.Syndikat;
 
-//@RunWith(Parameterized.class)
- public class TestClass {
-	// enum world{ WELT1,WELT2,WELT3};
-	// //Metropolis Bsp Nr.1:
-	// @Parameters
-	// public static Collection<Object[]> data(){
-	// return Arrays.asList(new Object[][] {
-	//
-	// {world.WELT1, Buerger B1 = new Buerger("B1", 10000, 34)},
-	// {world.WELT1, Buerger B2 = new Buerger("B2", 100000, 14)},
-	// {world.WELT1, Buerger B3 = new Buerger("B3", 90000, 24)}});
-	//
-	// }
+/**
+ * Testet nur berechen um Dopperlung von Objekten zu verhindern
+ * 
+ * @author Rosario & Fabin
+ *
+ */
+public class TestClass {
+
 	/**
-	 * @author Rosario
-	 *
+	 * Test für die Methode berechene() muss lokal inizialisiert werden das sonst es
+	 * mehr Steuerzahler gibt als tatsächlich
 	 */
-//	 class Welt1 extends Finanzamt {
-//		
-//		public Welt1() {
-//			
-//			super();
-//			
-//		}
-		 
+
+	@Test
+	public void testBerechene() {
+
 		Buerger B1 = new Buerger("B1", 10000, 34);
 		Buerger B2 = new Buerger("B2", 100000, 14);
 		Buerger B3 = new Buerger("B3", 190000, 24);
@@ -59,9 +44,9 @@ import unternehmen.Syndikat;
 				Superkraft.SUPERFEUER);
 		Schurke<Mutant<?>> Sc3 = new Schurke<>("Sc3", 120000, "GrosseNase", Superkraft.UNSTERBLICHKEIT,
 				Superkraft.SUPERFEUER, Superkraft.UNSICHTBARKEIT);
-		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "GrosseNase", Superkraft.SUPERFEUER, Superkraft.SUPERSPEED);
+		Schurke<Mutant<?>> Sc4 = new Schurke<>("Sc4", 130000, "GrosseNase", Superkraft.SUPERFEUER,
+				Superkraft.SUPERSPEED);
 
-		
 		Superheld<Mutant<?>> Su1 = new Superheld<>("Su1", 50000, "KleineNase", Superkraft.ONEPUNCH,
 				Superkraft.SUPERSPEED);
 		Superheld<Mutant<?>> Su2 = new Superheld<>("Su2", 50000, "KleineNase", Superkraft.KAFFEEPOWER,
@@ -70,52 +55,15 @@ import unternehmen.Syndikat;
 				Superkraft.SUPERSTARK);
 		Superheld<Mutant<?>> Su4 = new Superheld<>("Su4", 50000, "KleineNase", Superkraft.SUPERFEUER,
 				Superkraft.UNSICHTBARKEIT);
-		
-		
-		Kapitalgesellschaft K1 = new Kapitalgesellschaft("K1", 300000, B1,B2,B3);
-		Kapitalgesellschaft K2 = new Kapitalgesellschaft("K2", 200000, B1,B2);
-		
-		//Kapitalgesellschaft K3 = new Kapitalgesellschaft("K1", 300000, B1,B2,B3);
 
-		Personengesellschaft P1 = new Personengesellschaft("P1", 20000, B1,B2,B3);
-		
-		Syndikat S1 = new Syndikat(Sc1,Sc2,Sc3);
+		Kapitalgesellschaft K1 = new Kapitalgesellschaft("K1", 300000, B1, B2, B3);
+		Kapitalgesellschaft K2 = new Kapitalgesellschaft("K2", 200000, B1, B2);
+
+		Personengesellschaft P1 = new Personengesellschaft("P1", 20000, B1, B2, B3);
+
+		Syndikat S1 = new Syndikat(Sc1, Sc2, Sc3);
 		Syndikat S2 = new Syndikat(Sc1);
-		
- //		}
-//	 Welt1 a = new Welt1();
-	
-	 @Test //sollte 388000 raus kommen aber schleife bei berechenn in Junit geht 2*(list.size) in dem fall bis i = 24
-	 	   // in der main wird das richtig ausgef�hrt also 12 mal
-		public void testBerechene() {
-
-		 	assertEquals(776000,Finanzamt.getFinanzamt().berechne());
-//			assertEquals(388000,Finanzamt.getFinanzamt().berechne());
-		}
-	 	@Test
-	 	public void kaempfeTest() {
-
-	 		Sc1.kaempfe(Su3);
-		 	assertEquals(true, Sc1.getIstBesiegt());
-		 	assertEquals(false, Su3.getIstBesiegt());
-		 	
-		 	Su1.kaempfe(Sc2);
-		 	assertEquals(false, Sc2.getIstBesiegt());
-		 	assertEquals(true, Su1.getIstBesiegt());
-		}
-	
-	@Test 
-	public void richterTest() {
-		R1.verurteilen(Sc1);
-		R2.verurteilen(Sc2);
-		assertEquals(true, Sc1.getIstVerurteilt());
-		assertEquals(false, Sc2.getIstVerurteilt());
-		
-		R1.verurteilen(Sc2);
-		R2.verurteilen(Sc1);
-		assertEquals(true, Sc2.getIstVerurteilt());
-		assertEquals(false, Sc1.getIstVerurteilt());
-
+		assertEquals(388000, Finanzamt.getFinanzamt().berechne());
 	}
 
 }
